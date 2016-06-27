@@ -19,4 +19,4 @@ RUN mkdir -p /opt/supervisor
 ADD assets/supervisor.conf /opt/supervisor/
 ADD assets/haproxy.cfg /usr/local/etc/haproxy/
 
-CMD ["supervisord", "--nodaemon", "--configuration", "/opt/supervisor/supervisord.conf"]
+CMD ["supervisord", "--nodaemon", "--configuration", "/opt/supervisor/supervisor.conf"]

@@ -16,7 +16,7 @@ RUN apk add --update curl unzip supervisor && \
 
 RUN mkdir -p /opt/supervisor
 
-ADD assets/supervisor.conf /opt/supervisor/supervisor.conf
-ADD assets/haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+ADD assets/supervisor.conf /opt/supervisor/
+ADD assets/haproxy.cfg /usr/local/etc/haproxy/
 
-ENTRYPOINT ["supervisord", "--nodaemon", "--configuration", "/opt/supervisor/supervisord.conf"]
+CMD ["supervisord", "--nodaemon", "--configuration", "/opt/supervisor/supervisord.conf"]

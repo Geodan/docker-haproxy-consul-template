@@ -10,7 +10,7 @@ RUN apk add --update unzip && \
   curl -SL "https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip" -o consul_template.zip \
   && echo "${CONSUL_TEMPLATE_MD5} consul_template.zip" | sha256sum -c \
   && mkdir -p ${CONSUL_TEMPLATE_HOME} \
-  && tar -xzf consul_template.zip -C ${CONSUL_TEMPLATE_HOME} \
+  && unzip consul_template.zip -d ${CONSUL_TEMPLATE_HOME} \
   && rm consul_template.zip \
   && rm -rf /var/cache/apk/*
 
